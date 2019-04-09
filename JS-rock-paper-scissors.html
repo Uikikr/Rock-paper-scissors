@@ -3,7 +3,15 @@
     <header></header>
     <body>
         <script>
-        
+            const choices = [
+                'Rock',
+                'Paper',
+                'Scissor'
+            ];
+        function computerPlay(){
+            const index = Math.floor(Math.random() * choices.length);
+            return choices[index];
+        }
         </script>
     </body>
 </html>
