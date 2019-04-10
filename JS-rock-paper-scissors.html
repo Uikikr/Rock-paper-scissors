@@ -4,30 +4,24 @@
     <body>
         <script>
             const choices = [
-                'Rock',
-                'Paper',
-                'Scissor'
+                'rock',
+                'paper',
+                'scissor'
             ];
         function computerPlay(){
             const index = Math.floor(Math.random() * choices.length);
             return choices[index];
         }
-
         let playerSelection = function() {
-            let userInput = prompt('Pick rock, paper or scissor'.toLowerCase(choices))
-            return userInput
+            let userInput = prompt('Pick rock, paper or scissor'.toLowerCase(choices));
+            return userInput;
             }
 
-        const computerSelection = function(computerPlay) {
-            return computerPlay
-
-        }
-
-        function playRound(playerSelection, computerSelection) {
-
-            let pl = playerSelection
-            let co = computerSelection
-
+        function playRound() {
+            let pl = playerSelection();
+            let co = computerPlay();
+			console.log("player: " + pl);
+			console.log("computer: " + co);
             if (pl === 'rock') {
                 if (co === 'paper') {
                 return 'Rock beat paper'}
@@ -37,7 +31,7 @@
                 return 'Draw'}
             }
         }
-
+		console.log(playRound());
         </script>
     </body>
 </html>
