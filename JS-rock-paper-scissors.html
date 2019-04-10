@@ -13,7 +13,7 @@
             return choices[index];
         }
 
-        const playerSelection = function() {
+        let playerSelection = function() {
             let userInput = prompt('Pick rock, paper or scissor'.toLowerCase)
             return userInput
             }
@@ -27,9 +27,13 @@
             let pl = playerSelection
             let co = computerSelection
 
-            if (pl === rock) {
-                if co === paper return 'Rock beat paper'
-                if
+            if (pl === 'rock') {
+                if (co === 'paper') {
+                return 'Rock beat paper'}
+                else if (co === 'scissor') {
+                return 'Paper beat rock'} 
+                if (co === 'rock') {
+                return 'Draw'}
             }
 
 
