@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <header></header>
-    <body>
-        <script>
-            const choices = [
-                'Rock',
-                'Paper',
-                'Scissor'
-            ];
-        function computerPlay(){
+<header></header>
+
+<body>
+    <script>
+        const choices = [
+            'rock',
+            'paper',
+            'scissor'
+        ];
+        function computerPlay() {
             const index = Math.floor(Math.random() * choices.length);
             return choices[index];
         }
 
-        let playerSelection = function() {
-            let userInput = prompt('Pick rock, paper or scissor'.toLowerCase(choices))
-            return userInput
-            }
-
-        const computerSelection = function(computerPlay) {
-            return computerPlay
-
+        function playerPlay() {
+            let userInput = prompt('Pick rock, paper or scissor').toLowerCase();
+            return userInput;
         }
 
-        function playRound(playerSelection, computerSelection) {
+        function playRound() {
 
-            let pl = playerSelection
-            let co = computerSelection
+            let co = computerPlay();
+
+            let pl = playerPlay();
 
             if (pl === 'rock') {
                 if (co === 'paper') {
-                return 'Rock beat paper'}
+                console.log('Paper beat rock');
+                return -1;
+                }
                 else if (co === 'scissor') {
-                return 'Paper beat rock'} 
+                console.log('Rock beat scissor')
+                    return 1;
+                }
+                else if (co === 'rock') {
+                    console.log('Draw');
+                    return 0;
+                }
+            };
+            if (pl === 'paper') {
                 if (co === 'rock') {
-                return 'Draw'}
+                    console.log('Paper beat rock');
+                    return 1;
+                }
+                else if (co === 'scissor') {
+                    console.log('Scissor beat paper');
+                    return -1;
+                }
+                else if (co === 'paper') {
+                    console.log('Draw');
+                    return 0;
+                }
+            };
+            if (pl === 'scissor') {
+                if (co === 'paper') {
+                    console.log('Scissor beat paper');
+                    return 1;
+                }
+                else if (co === 'rock') {
+                    console.log('Rock beat scissor');
+                    return -1;
+                }
+                else if (co === 'scissor') {
+                    console.log('Draw');
+                    return 0;
+                }
             }
+        };
+
+        function game() {
+
+            let score = 0 
+            score += playRound();
+            score += playRound();
+            score += playRound();
+            score += playRound();
+            score += playRound();
+            
+            if (score > 0) alert('You win');
+            else if(score < 0) alert('You loose :(');
+            else alert('You are equal');
         }
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
